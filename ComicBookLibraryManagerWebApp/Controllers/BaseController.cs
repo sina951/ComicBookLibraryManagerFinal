@@ -7,11 +7,15 @@ using System.Web.Mvc;
 
 namespace ComicBookLibraryManagerWebApp.Controllers
 {
+    // adding the abstract keyword so we cannot instantiate BaseController directly
+    // Controller is an MVC base controller class! Other classes like ComicBookController.cs will in iherit
+    // as well from but from the BaseController class! (Class Hierchy)
     public abstract class BaseController : Controller
     {
         private bool _disposed = false;
 
         protected Context Context { get; private set; }
+        // we can only set the value of private from within this method itself
         protected Repository Repository { get; private set; }
 
         public BaseController()

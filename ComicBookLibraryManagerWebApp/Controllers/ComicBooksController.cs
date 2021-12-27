@@ -67,6 +67,7 @@ namespace ComicBookLibraryManagerWebApp.Controllers
         [HttpPost]
         public ActionResult Add(ComicBooksAddViewModel viewModel)
         {
+            // Gives us access to the comic book that the user is attempting to add
             ValidateComicBook(viewModel.ComicBook);
 
             if (ModelState.IsValid)
@@ -80,12 +81,13 @@ namespace ComicBookLibraryManagerWebApp.Controllers
 
                 return RedirectToAction("Detail", new { id = comicBook.Id });
             }
-
+            // of Modelstate was invalid we initialize the view model
             viewModel.Init(Repository, _seriesRepository, _artistsRepository);
-
+            // and pass it into a call to the view method, which the user can now see on our page
             return View(viewModel);
         }
-
+        
+         
         public ActionResult Edit(int? id)
         {
             if (id == null)
