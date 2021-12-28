@@ -8,8 +8,11 @@ using System.Threading.Tasks;
 
 namespace ComicBookShared.Data
 {
+    // The constructor for the BaseRepository class requires us to pass in a context instance
     public class ComicBooksRepository : BaseRepository<ComicBook>
     {
+        // The constructor for the BaseRepository class requires us to pass in a context instance
+        // to do that we can use the : base keyword call the base class contructor and pass in base context
         public ComicBooksRepository(Context context)
             : base(context)
         {

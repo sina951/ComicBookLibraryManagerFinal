@@ -15,7 +15,8 @@ namespace ComicBookLibraryManagerWebApp.Controllers
         private bool _disposed = false;
 
         protected Context Context { get; private set; }
-        // we can only set the value of private from within this method itself
+        // procted means that the descendants controller classes can accesthis field
+        // which represents our our instance of database context
         protected Repository Repository { get; private set; }
 
         public BaseController()

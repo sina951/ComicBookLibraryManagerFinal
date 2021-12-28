@@ -44,6 +44,8 @@ namespace ComicBookLibraryManager.Data
         /// </summary>
         /// <returns>An IList collection of ComicBook entity instances. 
         /// It eagerly loads the related series entity by including the series navigation property </returns>
+        /// ToList() forces execution of the query. This returns a list collection type IList<T> and it makes it clear
+        /// that the database query will happen here in this method.
         public static IList<ComicBook> GetComicBooks()
         {
             using (Context context = GetContext())

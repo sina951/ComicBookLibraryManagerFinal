@@ -21,8 +21,10 @@ namespace ComicBookLibraryManagerWebApp.Controllers
         private SeriesRepository _seriesRepository = null;
         private ArtistsRepository _artistsRepository = null;
 
+        // constructor
         public ComicBooksController()
         {
+            // new ComicBooksRepository(Context) here we pass in the base controller context property 
             _comicBooksRepository = new ComicBooksRepository(Context);
             _seriesRepository = new SeriesRepository(Context);
             _artistsRepository = new ArtistsRepository(Context);
