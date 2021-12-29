@@ -61,6 +61,7 @@ namespace ComicBookLibraryManagerWebApp.Controllers
         [HttpPost]
         public ActionResult Add(Artist artist)
         {
+            // ValidateArtist checks if it unique artist, no duplicates
             ValidateArtist(artist);
 
             if (ModelState.IsValid)

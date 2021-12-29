@@ -19,6 +19,7 @@ namespace ComicBookShared.Data
         {
             var artist = Context.Artists.AsQueryable();
 
+            // Here we are eagerly loading four navigation properties
             if (includeRelatedEntities)
             {
                 artist = artist
@@ -40,6 +41,7 @@ namespace ComicBookShared.Data
 
         public bool ArtistHasName(int artistId, string name)
         {
+            // Check if there is an artist with different Id but with the same name
             return Context.Artists
                 .Any(a => a.Id != artistId && a.Name == name);
         }

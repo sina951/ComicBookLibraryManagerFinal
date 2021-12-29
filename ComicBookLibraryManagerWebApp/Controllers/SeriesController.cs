@@ -80,7 +80,7 @@ namespace ComicBookLibraryManagerWebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
+            
             var series = _seriesRepository
                 .Get((int)id, includeRelatedEntities: false);
 
